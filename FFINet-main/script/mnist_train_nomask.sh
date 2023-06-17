@@ -1,0 +1,22 @@
+cd ..
+python -u main.py \
+    --ex_name mnist_3fft_nomask \
+    --use_gpu True \
+    --gpu 0 \
+    --batch_size 16 \
+    --val_batch_size 16 \
+    --data_root ./data \
+    --dataname mmnist \
+    --num_workers 4 \
+    --in_shape 10 1 64 64 \
+    --hid_S 64 \
+    --hid_T 512 \
+    --N_S 4 \
+    --N_T 3 \
+    --groups 8 \
+    --epochs 2000 \
+    --log_step 1 \
+    --lr 0.01 \
+    --mask 0\
+    --recover_loss 0\
+    --lamda 0\
