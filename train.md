@@ -1,0 +1,1 @@
+nohup bash for_gate1_weight.sh DPAdd16_EGCFM_k5_addHead 19 4 1.05 300 0 true 0.3 &
