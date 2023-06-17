@@ -2,7 +2,7 @@
 
 This repository contains the implementation code for paper:
 
-**FFINet?FFast Fourier Inception Networks for Occluded Video Prediction**  
+**FFINet:FFast Fourier Inception Networks for Occluded Video Prediction**  
 
 ## Introduction
 
