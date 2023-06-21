@@ -75,6 +75,13 @@ with mask
 Citation
 
 If you find this repo useful, please cite the following papers.
+@article{li-arxiv2023-ffinet,
+  author    = {Ping Li and Chenhan Zhang, Xianghua Xu},
+  title     = {Fast Fourier Inception Networks for Occluded Video Predcition},
+  journal   = {arXiv preprint arXiv:2006.10346},
+  year      = {2023},
+  doi       = {arXiv.2306.10346},
+}
 ```
 ## Contact
 If you have any questions, feel free to contact us through email (201050044@hdu.edu.cn)
