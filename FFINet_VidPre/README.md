@@ -76,7 +76,7 @@ Citation
 
 If you find this repo useful, please cite the following papers.
 @article{li-arxiv2023-ffinet,
-  author    = {Ping Li and Chenhan Zhang, Xianghua Xu},
+  author    = {Ping Li and Chenhan Zhang and Xianghua Xu},
   title     = {Fast Fourier Inception Networks for Occluded Video Predcition},
   journal   = {arXiv preprint arXiv:2006.10346},
   year      = {2023},
