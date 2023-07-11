@@ -3,7 +3,7 @@ This is official pytorch implementation of [RSFNet：Residual Spatial Fusion Net
 <br/>
 
 ## Introduction
-![Image](RSFNet.png)
+![Image](RSFNet.png)<br/>
 this work proposes a Residual Spatial Fusion Network (RSFNet) for RGBT semantic segmentation. Specifically, we employ an asymmetric encoder to learn the compensating features of the RGB and the thermal images. To effectively fuse the dual-modality features,we generate the pseudo-labels by saliency detection to supervise the feature learning, and develop the Residual Spatial Fusion(RSF) module with structural re-parameterization to learn more promising features by spatially fusing the cross-modality features.RSF employs a hierarchical feature fusion to aggregate multilevel features, and applies the spatial weights with the residual connection to adaptively control the multi-spectral feature fusion by the confidence gate. Extensive experiments were carried out on two benchmarks, i.e., MFNet database and PST900 database. The results have shown the state-of-the-art segmentation performance of our method, which achieves a good balance between accuracy and speed.
 
 ## Install Dependencies
