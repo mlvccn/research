@@ -1,10 +1,11 @@
-# Efficient Long-short temporal attention Network for Unsupervised Video Object Segmentation
+# Efficient Long-Short Temporal Attention Network for Unsupervised Video Object Segmentation
 
 ## Introduction
 
-Efficient Long-short temporal attention Network  (LSTA) is a framework for unsupervised video object segmentation task. Our method captures long and short range spatial temporal relation of each frame pixels using proposed Light Temporal Memory(LTM) and Temporal Local Attention(TLA). Both LTM and TLA has a liear time complexity, resulting 34 FPS segmentation speed on DAVIS 16 val (480p resolution).
+Efficient Long-Short Temporal Attention Network  (LSTA) is a framework for unsupervised video object segmentation task. Our method captures long and short range spatial temporal relation of each frame pixels using proposed Light Temporal Memory(LTM) and Short Temporal Attention(STA). Both LTM and STA has a linear time complexity, resulting 42.8 FPS segmentation speed on DAVIS 16 val (480p resolution) 
+using TITAN XP GPU card.
 <p align="center">
-<img src="figs/networks.png" width="1000px">
+<img src="figs/LSTA.png" width="1000px">
 </p>
 
 ## Installation
@@ -71,6 +72,13 @@ Download and put the model weights under current dir. Run following command, the
 ```
 bash eval.sh
 ```
+
+## Quantitative results on DAVIS-16
+
+|       |  J   |  F   | average |
+|:-----:|:----:|:----:|:-------:|
+| LSTA  | 82.4 | 84.3 |  83.4   |
+| LSTA* | 82.7 | 84.8 |  83.8   |
 
 ## Acknowledgement
 
