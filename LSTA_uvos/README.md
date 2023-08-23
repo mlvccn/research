@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Efficient Long-Short Temporal Attention Network  (LSTA) is a framework for unsupervised video object segmentation task. Our method captures long and short range spatial temporal relation of each frame pixels using proposed Light Temporal Memory(LTM) and Short Temporal Attention(STA). Both LTM and STA has a linear time complexity, resulting 42.8 FPS segmentation speed on DAVIS 16 val (480p resolution) 
+Efficient Long-Short Temporal Attention Network  (LSTA) is a framework for unsupervised video object segmentation task. 
+Our method captures long- and short-range spatial temporal relation at pixel level using the proposed Long Temporal Memory(LTM) and Short Temporal Attention(STA). 
+Both LTM and STA have a nearly linear time complexity, achieving 42.8 FPS segmentation speed on DAVIS2016 val set (480p resolution) 
 using TITAN XP GPU card.
 <p align="center">
 <img src="figs/LSTA.png" width="1000px">
@@ -73,14 +75,38 @@ Download and put the model weights under current dir. Run following command, the
 bash eval.sh
 ```
 
-## Quantitative results on DAVIS-16
+## Quantitative results on DAVIS-16.
 
-|       |  J   |  F   | average |
-|:-----:|:----:|:----:|:-------:|
-| LSTA  | 82.4 | 84.3 |  83.4   |
-| LSTA* | 82.7 | 84.8 |  83.8   |
+|       |  J   |  F   | average | TITAN XP | 2080TI |
+|:-----:|:----:|:----:|:-------:|----------|--------|
+| LSTA  | 82.4 | 84.3 |  83.4   | 42.8     | 62.3   |
+
+## Qualitative results 
+
+
+<p align="center">
+    <img src="figs/cat.png" width="600"> <br>
+</p>
+
+Segmentation results of LSTA(Row 1) and MATNet(Row 2) on two randomly selected video from YouTube-objects.
+
+```
+Citation
+
+If you find this repo useful, please cite the following papers.
+@article{li--lsta,
+  author    = {},
+  title     = {Efficient Long-Short Temporal Attention Network for Unsupervised Video Object Segmentation},
+  journal   = {},
+  year      = {},
+  doi       = {},
+}
+```
+## Contact
+If you have any questions, feel free to contact us through email Zhang Yu(zycs@hdu.edu.cn)
 
 ## Acknowledgement
 
-We borrowed some codes from [CFBI](https://github.com/z-x-yang/CFBI) and [anchor-diff-VOS](https://github.com/yz93/anchor-diff-VOS). Thanks for their excellent works!
+We would like to thank to the authors of [CFBI](https://github.com/z-x-yang/CFBI) and [anchor-diff-VOS](https://github.com/yz93/anchor-diff-VOS) 
+which significantly accelerated the development of our LSTA model. 
 
