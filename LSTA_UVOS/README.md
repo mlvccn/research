@@ -15,7 +15,6 @@ using TITAN XP GPU card.
 1. Environment:
 
    - Python 3.8
-
    - PyTorch 1.8
    - CUDA 11.1
    - OpenCV 4.5.2
@@ -27,15 +26,16 @@ pip install opencv-python
 ```
 
 2. Dataset preparation:
-   - DAVIS 2017: put under `data/DAVIS/`.
-   - YouTube-VOS 2019: put under `data/YTB/`.
-After downloding the datastes, use commands below to generate soft link.
+   - DAVIS2017: put under `data/DAVIS/`.
+   - YouTube-VOS2019: put under `data/YTB/`.
+   
+After downloading the datasets, use the commands below to generate soft links.
 ```
 ln -s /path/to/DAVIS/* data/DAVIS/
 ln -s /path/to/YouTube-VOS/2019/* data/YTB/
 ```
 
-Once you finished the commands, the data file should be like:
+After running the above commands, the data file should be like:
 
 ```
 data/
@@ -54,28 +54,27 @@ data/
     └── valid.zip -> /data16t/data/YTB/2019/valid.zip
 ```
 ## Training
-Put the following weights under `pretrained`.
+Put the following weights under the `pretrained` folder.
 - STM weight from this [url](https://github.com/seoungwugoh/STM).
 - resnet101-deeplabv3p.pth from this  [url](https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/). 
 
-All the configurations are in `config.py`. In order to train on DAVIS and YouTube-VOS, you should change the `self.DATASETS = ['youtubevos', 'davis2017']` to `self.DATASETS = [ 'davis2017']` in first step training with `self.TRAIN_TOTAL_STEPS = 50000`.
+All the configurations are in `config.py`. In order to train on DAVIS and YouTube-VOS, please change the `self.DATASETS = ['youtubevos', 'davis2017']` to `self.DATASETS = [ 'davis2017']` in first step training with `self.TRAIN_TOTAL_STEPS = 50000`.
 Then use the following command to start training. 
 ```
 bash train.sh
 ```
-In order to train on DAVIS and YouTube-VOS, you should set  `self.DATASETS = ['youtubevos', 'davis2017']`  and  `self.TRAIN_TOTAL_STEPS = 25000`.
-Then use the `bash train.sh` command to start training. If the target score is not reached, iterate and train multiple times.
+In order to train on DAVIS and YouTube-VOS, one should set  `self.DATASETS = ['youtubevos', 'davis2017']`  and  `self.TRAIN_TOTAL_STEPS = 25000`.
+Then use the `bash train.sh` command to start training. Please iteratively train the model until the satisfying score is achieved.
 
 ## Testing
 
-- Best [LSTA]() model. Code: kgdu .
-Download and put the model weights under current dir. Run following command, the segmentation results of DAVIS 16 val set will generated under `log` dir.
+Download and put the model weights under the current dir. Run the following command, the segmentation results on DAVIS2016 val set will be generated under the `log` dir.
 
 ```
 bash eval.sh
 ```
 
-## Quantitative results on DAVIS-16.
+## Quantitative results on DAVIS2016.
 
 |       |  J   |  F   | average | TITAN XP | 2080TI  |
 |:-----:|:----:|:----:|:-------:|----------|---------|
@@ -88,11 +87,11 @@ bash eval.sh
     <img src="figs/cat.png" width="600"> <br>
 </p>
 
-Segmentation results of LSTA(Row 1) and MATNet(Row 2) on one randomly selected video from YouTube-objects.
+Segmentation results of LSTA (Row 1) and MATNet (Row 2) on one randomly selected video from YouTube-objects.
 
 ## Citation
 
-If you find this repo useful, please cite the following papers.
+If you find this repo useful, please cite the following paper.
 ```
 @article{li--lsta,
   author    = {},
@@ -103,10 +102,10 @@ If you find this repo useful, please cite the following papers.
 }
 ```
 ## Contact
-If you have any questions, feel free to contact us through email Zhang Yu(zycs@hdu.edu.cn)
+If you have any questions, please contact Mr. Zhang Yu via email at zycs@hdu.edu.cn.
 
 ## Acknowledgement
 
-We would like to thank to the authors of [CFBI](https://github.com/z-x-yang/CFBI) and [anchor-diff-VOS](https://github.com/yz93/anchor-diff-VOS) 
-which significantly accelerated the development of our LSTA model. 
+We would like to thank the authors of [CFBI](https://github.com/z-x-yang/CFBI) and [anchor-diff-VOS](https://github.com/yz93/anchor-diff-VOS) 
+which have significantly accelerated the development of our LSTA model. 
 
