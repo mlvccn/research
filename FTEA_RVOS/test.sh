@@ -1,0 +1,1 @@
+python main.py -rm eval -c configs/jhmdb_sentences.yaml -ws 8 -bs 3 -ckpt runs/2022_04_17-11_10_08_AM/checkpoints/151.pth.tar -ng 1
