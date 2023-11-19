@@ -2,15 +2,14 @@
 
 This repository contains the implementation code for paper:
 
-**FFINet:FFast Fourier Inception Networks for Occluded Video Prediction**  ([paper](https://arxiv.org/pdf/2306.10346.pdf)
-)
+### FFINet: Fast Fourier Inception Networks for Occluded Video Prediction  ([paper](https://arxiv.org/pdf/2306.10346.pdf)) TMM'2023
 ## Introduction
 
 <p align="center">
     <img src="./readme_figures/overall_framework.png" width="600"> <br>
 </p>
 
-Abstract: We develop the fully convolutional Fast Fourier Inception Networks for video prediction, termed FFINet, which includes two primary components i.e.,the occlusion inpainterand the spatiotemporal translator. The former adopts the fast Fourier convolutions to enlarge the receptive field, such that the missing areas (occlusion) with complex geometric structures are filled by the inpainter. The latter employs the stacked Fourier transform inception module to learn the temporal evolution by group convolutions and the spatial movement by channel-wise Fourier convolutions which captures both the local and the global spatiotemporal features.This encourages generating more realistic future frames. 
+Video prediction is a pixel-level task that generates future frames by employing the historical frames. There often exist continuous complex motions, such as object overlapping and scene occlusion in video, which poses great challenges to this task. Previous works either fail to well capture the long-term temporal dynamics or do not handle the occlusion masks. To address these issues, we develop the fully convolutional Fast Fourier Inception Networks for video prediction, termed FFINet, which includes two primary components, i.e., the occlusion inpainter and the spatiotemporal translator. The former adopts the fast Fourier convolutions to enlarge the receptive field, such that the missing areas (occlusion) with complex geometric structures are filled by the inpainter. The latter employs the stacked Fourier transform inception module to learn the temporal evolution by group convolutions and the spatial movement by channel-wise Fourier convolutions, which captures both the local and the global spatiotemporal features. This encourages generating more realistic and high-quality future frames. To optimize the model, the recovery loss is imposed to the objective, i.e., minimizing the mean square error between the ground-truth frame and the recovery frame.
 
 ## Dependencies
 
@@ -71,20 +70,21 @@ with mask
     <img src="./readme_figures/qualitative_mask.png" width="600"> <br>
 </p>
 
-```
-Citation
+
+## Citation
 
 If you find this repo useful, please cite the following papers.
-@article{li-arxiv2023-ffinet,
+```
+@article{li-tmm2023-ffinet,
   author    = {Ping Li and Chenhan Zhang and Xianghua Xu},
   title     = {Fast Fourier Inception Networks for Occluded Video Predcition},
-  journal   = {arXiv preprint arXiv:2006.10346},
+  journal   = {IEEE Transactions on Multimedia},
   year      = {2023},
-  doi       = {arXiv.2306.10346},
+  doi       = {10.1109/TMM.2023.3310330},
 }
 ```
 ## Contact
 If you have any questions, feel free to contact us through email (201050044@hdu.edu.cn)
 
 ## Acknowledgements
-We would like to thank to the authors of [SimVP](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9879439) for making their [source code](https://github.com/gaozhangyang/SimVP-Simpler-yet-Better-Video-Prediction) public which significantly accelerated the development of FFINet.
+We would like to thank to the authors of [SimVP](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9879439) for making their [source code](https://github.com/gaozhangyang/SimVP-Simpler-yet-Better-Video-Prediction) public, which significantly accelerated the development of FFINet.
